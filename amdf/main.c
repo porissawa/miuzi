@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "../shared/wav.h"
+#include "../headers/wav.h"
 
 static char* readFile(const char* path) {
     FILE* file = fopen(path, "rb");
@@ -39,5 +39,4 @@ int main(int argc, const char *argv[]) {
         printf("Usage: amdf [path]\n");
         return 1;
     }
-    
 }

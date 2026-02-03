@@ -1,5 +1,5 @@
-#include "../shared/common.h"
-#include "../shared/wav.h"
+#include "../headers/common.h"
+#include "../headers/wav.h"
 
 void wavReadFile(const char *fileBuffer) {
     wavHdr hdr = {0};
