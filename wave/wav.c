@@ -1,7 +1,5 @@
-#include <string.h>
-#include <math.h>
-
-#include "wav.h"
+#include "../headers/common.h"
+#include "../headers/wav.h"
 
 // Only works on little-endian machines
 void wavWriteHeader(FILE *fp) {

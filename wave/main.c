@@ -1,4 +1,4 @@
-#include "wav.h"
+#include "../headers/wav.h"
 
 int main() {
     FILE *fp = fopen("build/output.wav", "wb");

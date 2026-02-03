@@ -26,19 +26,13 @@ typedef struct {
 typedef struct {
     fourcc id; // "fmt "
     uint32_t size;
-    // 0x1 for LPCM, 0x3 for IEEE float PCM, 0x6 A-law, 0x7 u-law
-    uint16_t fmt_tag;
-    // 1 for mono, 2 for stereo
-    uint16_t channels;
-    // sampling rate 1/T, where T is sampling period in seconds
-    uint32_t samples_per_sec;
-    // channels x samples_per_sec x bits_per_sample / 8
-    uint32_t bytes_per_sec;
+    uint16_t fmt_tag; // 0x1 for LPCM, 0x3 for IEEE float PCM, 0x6 A-law, 0x7 u-law
+    uint16_t channels; // 1 for mono, 2 for stereo
+    uint32_t samples_per_sec; // sampling rate 1/T, where T is sampling period in seconds
+    uint32_t bytes_per_sec; // channels x samples_per_sec x bits_per_sample / 8
     // number of bytes of a single sample of audio across multiple channels.
-    // channels x bits_per_sample / 8
-    uint16_t block_align;
-    // bit depth. If depth D <= 8 range is [0, 2^D - 1], if D > 8 [-2^(D-1), 2^(D-1) - 1]
-    uint16_t bits_per_sample;
+    uint16_t block_align; // channels x bits_per_sample / 8
+    uint16_t bits_per_sample; // bit depth. If depth D <= 8 range is [0, 2^D - 1], if D > 8 [-2^(D-1), 2^(D-1) - 1]
 } fmtCk;
 
 typedef struct {
@@ -54,5 +48,6 @@ typedef struct {
 
 void wavWriteHeader(FILE *fp);
 void wavWriteSine(FILE *fp);
+void wavReadFile(const char *fileBuffer);
 
 #endif
