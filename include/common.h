@@ -6,4 +6,6 @@
 #include <string.h>
 #include <math.h>
 
+typedef int16_t sample_t;
+
 #endif

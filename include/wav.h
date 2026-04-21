@@ -13,9 +13,7 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-typedef int16_t sample_t;
-
-typedef int8_t fourcc[4];
+typedef uint8_t fourcc[4];
 
 typedef struct {
     fourcc id; //"RIFF"
@@ -49,5 +47,6 @@ typedef struct {
 void wavWriteHeader(FILE *fp);
 void wavWriteSine(FILE *fp);
 void wavReadFile(const char *fileBuffer);
+float wavAudioDuration(wavHdr wav);
 
 #endif

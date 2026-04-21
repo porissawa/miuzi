@@ -1,5 +1,5 @@
-#include "../headers/common.h"
-#include "../headers/wav.h"
+#include "../include/common.h"
+#include "../include/wav.h"
 
 // Only works on little-endian machines
 void wavWriteHeader(FILE *fp) {
